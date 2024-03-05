@@ -88,7 +88,7 @@ git clone https://github.com/f8q8/luci-app-autoreboot.git package/
 
 git clone --depth=1 -b master https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone --depth=1 -b master https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-
+git clone --depth=1 -b master https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
 
 
 
