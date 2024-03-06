@@ -59,11 +59,7 @@ rm -rf openwrt-packages/!(luci-app-netdata|luci-app-smartdns|luci-app-upnp)
 cp -r openwrt-packages/{luci-app-netdata,luci-app-smartdns,luci-app-upnp} package/
 rm -rf openwrt-packages
 
-git clone https://github.com/coolsnowwolf/luci luci1
-shopt -s extglob
-rm -rf luci1/applications/!(luci-app-autoreboot)
-cp -r luci1/applications/luci-app-autoreboot package/
-rm -rf luci1
+
 
 
 #删除feeds自带mosdns、v2ray-geodata
