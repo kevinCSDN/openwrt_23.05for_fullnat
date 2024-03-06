@@ -76,7 +76,7 @@ rm -rf feeds/luci/themes/luci-theme-Bootstrap
 rm -rf feeds/luci/themes/luci-theme-BootstrapDark
 rm -rf feeds/luci/themes/luci-theme-BootstrapLight
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 21.x feeds/packages/lang/golang
 
 git clone https://github.com/f8q8/luci-app-autoreboot.git package/luci-app-autoreboot
 #git clone -b js https://github.com/sirpdboy/luci-theme-kucat.git
