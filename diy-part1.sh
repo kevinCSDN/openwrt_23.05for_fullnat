@@ -59,11 +59,11 @@ rm -rf openwrt-packages/!(luci-app-netdata|luci-app-smartdns|luci-app-upnp)
 cp -r openwrt-packages/{luci-app-netdata,luci-app-smartdns,luci-app-upnp} package/
 rm -rf openwrt-packages
 
-#替换firewall4
+#替换network/utils
 git clone -b master --single-branch --filter=blob:none https://github.com/immortalwrt/immortalwrt
 shopt -s extglob
-rm -rf package/network/config/firewall4 
-cp -r immortalwrt/package/network/config/firewall4 package/network/config
+rm -rf package/network/utils
+cp -r immortalwrt/package/network/utils package/network
 rm -rf immortalwrt
 
 
