@@ -52,14 +52,19 @@ sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
 #rm -rf openwrt-packages
 
 
-
+#拉取netdata,smartdns,upnp
 git clone https://github.com/kiddin9/openwrt-packages
 shopt -s extglob
 rm -rf openwrt-packages/!(luci-app-netdata|luci-app-smartdns|luci-app-upnp)
 cp -r openwrt-packages/{luci-app-netdata,luci-app-smartdns,luci-app-upnp} package/
 rm -rf openwrt-packages
 
-
+#替换firewall4
+git clone -b master --single-branch --filter=blob:none https://github.com/immortalwrt/immortalwrt
+shopt -s extglob
+rm -rf package/network/config/firewall4 
+cp -r immortalwrt/package/network/config/firewall4 package/network/config
+rm -rf immortalwrt
 
 
 #删除feeds自带mosdns、v2ray-geodata
@@ -69,12 +74,7 @@ rm -rf openwrt-packages
 # Modify default theme（FROM uci-theme-bootstrap CHANGE TO luci-theme-material）
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci/Makefile
 
-#rm -rf ./feeds/packages/net/mosdns
-#rm -rf feeds/packages/net/v2ray-geodata
-rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/luci/themes/luci-theme-Bootstrap
-rm -rf feeds/luci/themes/luci-theme-BootstrapDark
-rm -rf feeds/luci/themes/luci-theme-BootstrapLight
+#替换golang为新版本
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
 
@@ -82,7 +82,7 @@ git clone https://github.com/f8q8/luci-app-autoreboot.git package/luci-app-autor
 #git clone -b js https://github.com/sirpdboy/luci-theme-kucat.git
 #git clone -b main https://github.com/sirpdboy/luci-app-advancedplus.git
 
-
+#拉取主题
 git clone --depth=1 -b master https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 git clone --depth=1 -b master https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 git clone --depth=1 -b master https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
