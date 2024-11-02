@@ -60,11 +60,11 @@ cp -r openwrt-packages/{luci-app-netdata,luci-app-smartdns,luci-app-upnp} packag
 rm -rf openwrt-packages
 
 #替换network/utils
-git clone -b master --single-branch --filter=blob:none https://github.com/immortalwrt/immortalwrt
-shopt -s extglob
-rm -rf package/network/utils
-cp -r immortalwrt/package/network/utils package/network
-rm -rf immortalwrt
+#git clone -b master --single-branch --filter=blob:none https://github.com/immortalwrt/immortalwrt
+#shopt -s extglob
+#rm -rf package/network/utils
+#cp -r immortalwrt/package/network/utils package/network
+#rm -rf immortalwrt
 
 
 #删除feeds自带mosdns、v2ray-geodata
